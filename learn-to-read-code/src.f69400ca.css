@@ -1,0 +1,660 @@
+.ToggleSwitch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ToggleSwitch h3 {
+  margin-bottom: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 1px 0px white;
+  color: rgba(0, 0, 0, 0.5);
+}
+.ToggleSwitch div {
+  display: flex;
+  padding: 0.25rem;
+  background-color: rgba(0, 0, 0, 0.25);
+  border-radius: 999px;
+  box-shadow: inset 1px 1px 1px 0px rgba(0, 0, 0, 0.25), 0 1px 0 0 white;
+}
+.ToggleSwitch div a {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.4);
+  padding: 0.75rem 0;
+  width: 9rem;
+  user-select: none;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+.ToggleSwitch div a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.ToggleSwitch div a:first-child {
+  border-radius: 999px 0 0 999px;
+}
+.ToggleSwitch div a:last-child {
+  border-radius: 0 999px 999px 0;
+}
+.ToggleSwitch div a.--selected {
+  color: #ff144f;
+  background-color: #efefef;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.25), inset 0 1px 0 0 white;
+  text-shadow: 0 1px 0px white;
+}
+.IndexPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0rem;
+  height: 1px;
+  min-height: 100vh;
+  background-color: #efefef;
+  overflow-x: hidden;
+}
+.IndexPage h1, .IndexPage h2 {
+  font-weight: 300;
+  line-height: 1;
+  user-select: none;
+  text-shadow: 0 1px 0px white;
+  text-align: center;
+}
+.IndexPage h1 {
+  margin-right: -1.75rem;
+  margin-bottom: 3rem;
+  font-size: 5rem;
+  text-transform: uppercase;
+  letter-spacing: 1.75rem;
+}
+.IndexPage h2 {
+  margin-right: -0.0625rem;
+  font-size: 2rem;
+  letter-spacing: 0.0625rem;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: lowercase;
+}
+.IndexPage .ToggleSwitch {
+  margin-bottom: 2rem;
+}
+
+.IndexPage__HighScore {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.IndexPage__HighScore h3 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.5);
+}
+.IndexPage__HighScore h4 {
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.IndexPage__StartButton {
+  display: block;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  width: 18.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: white;
+  background-color: #ff144f;
+  border-radius: 999px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.25), inset 0 1px 0 0 rgba(255, 255, 255, 0.5);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+}
+.IndexPage__StartButton:hover {
+  background-color: #ff4775;
+  transform: translateY(-1px);
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 0 rgba(255, 255, 255, 0.5), 0 3px 6px 0 rgba(0, 0, 0, 0.25);
+}
+.IndexPage__StartButton:active {
+  background-color: #fa003f;
+  box-shadow: inset 0 1px 0 0 rgba(0, 0, 0, 0.25), 0 1px 0 0 white;
+  transform: translateY(1px);
+}
+.Toolbar {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  flex-shrink: 0;
+  color: white;
+  background-color: #333333;
+}
+.TabLayout {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.TabLayout__Toolbar {
+  display: flex;
+  width: 100%;
+  background-color: #333333;
+}
+
+.TabLayout__Content {
+  display: flex;
+  flex-basis: 100%;
+  width: 100%;
+  background-color: #333333;
+  overflow: auto;
+}
+.TabLayout__Content > * {
+  display: none;
+  width: 100%;
+  background-color: white;
+  overflow: auto;
+}
+.TabLayout__Content > *.--active {
+  display: block;
+}
+
+.TabLayout__TabButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5rem;
+  flex-basis: 100%;
+  font-size: 0.875rem;
+  font-weight: bolder;
+  text-decoration: none;
+  color: black;
+  padding-right: 1rem;
+  letter-spacing: 0.0625rem;
+  color: #b4b4af;
+  background-color: #2e2e2e;
+  box-shadow: inset 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #eeede4;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.TabLayout__TabButton > i {
+  margin-right: 0.5rem;
+}
+.TabLayout__TabButton.--active {
+  background-color: white;
+  box-shadow: inset 0 3px 0 0 #ff144f;
+  cursor: default;
+  /* Hack to fix color for the first child to match the code theme. */
+}
+.TabLayout__TabButton.--active:first-child {
+  background-color: #f5f2f0;
+  border-bottom-color: #e6e3e1;
+}
+.TabLayout__TabButton.--active > i {
+  color: #ff144f;
+}
+.TabLayout__TabButton.--active > span {
+  color: black;
+}
+
+.TabLayout.--windowed .TabLayout__TabButton {
+  background-color: white;
+  box-shadow: inset 0 3px 0 0 #ff144f;
+  cursor: default;
+  justify-content: flex-start;
+  padding-left: 1rem;
+  margin-right: 1px;
+  /* Hack to fix color for the first child to match the code theme. */
+}
+.TabLayout.--windowed .TabLayout__TabButton:first-child {
+  background-color: #f5f2f0;
+  border-bottom-color: #ebe8e6;
+}
+.TabLayout.--windowed .TabLayout__TabButton:last-child {
+  margin-right: 0;
+}
+.TabLayout.--windowed .TabLayout__TabButton > i {
+  color: #ff144f;
+}
+.TabLayout.--windowed .TabLayout__TabButton > span {
+  color: black;
+}
+.TabLayout.--windowed .TabLayout__Content > * {
+  display: block;
+  margin-right: 1px;
+}
+.TabLayout.--windowed .TabLayout__Content > *:last-child {
+  margin-right: 0;
+}
+.Code {
+  box-sizing: border-box !important;
+  margin: 0 !important;
+  height: 100% !important;
+  font-size: 1.125rem !important;
+}
+
+@media (max-width: 600px) {
+  .Code {
+    font-size: 1rem !important;
+  }
+}
+.OutputTextArea {
+  width: 100%;
+  height: 100%;
+  flex-basis: 100%;
+}
+.OutputTextArea textarea {
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  height: 100%;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  border: 0;
+  background-color: inherit;
+  color: black;
+  resize: none;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .OutputTextArea textarea {
+    font-size: 1rem;
+  }
+}
+.VisualValidator {
+  width: 100%;
+  height: 100%;
+  flex-basis: 100%;
+  padding: 1rem;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  box-sizing: border-box;
+  background-color: inherit;
+  color: black;
+}
+.VisualValidator .--correct {
+  background-color: #d7f5ce;
+}
+.VisualValidator .--incorrect {
+  background-color: #ff9ca5;
+}
+.VisualValidator .--more {
+  background-color: #fff1a9;
+}
+.VisualValidator .--more::after {
+  content: "...";
+  padding: 0 0.25rem;
+  color: rgba(0, 0, 0, 0.5);
+  user-select: none;
+  font-size: 0.25rem;
+}
+
+@media (max-width: 600px) {
+  .VisualValidator {
+    font-size: 1rem;
+  }
+}
+.PlayPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.PlayPage__PracticeTitle {
+  margin: 0 auto;
+  text-align: center;
+  user-select: none;
+}
+.PlayPage__PracticeTitle h3 {
+  font-size: 1.75rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  color: #cccccc;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+  line-height: 1;
+}
+.PlayPage__PracticeTitle h4 {
+  font-size: 0.875rem;
+  line-height: 1;
+  letter-spacing: 0.0625rem;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.25);
+}
+
+.PlayPage__Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.25rem;
+  padding-right: 0.75rem;
+  width: 100%;
+  height: 3.25rem;
+  text-decoration: none;
+  color: black;
+  background-color: #ffea80;
+  box-shadow: 0 -1px 0 0 white;
+  text-shadow: 0 1px 0 white;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  user-select: none;
+}
+.PlayPage__Button:first-child {
+  margin-left: 0.25rem;
+}
+.PlayPage__Button:hover {
+  background-color: #fff2b3;
+}
+.PlayPage__Button i {
+  margin-right: 0.25rem;
+  font-size: 2rem;
+  color: #b39500;
+}
+.PlayPage__Button.--subtle {
+  background-color: #efefef;
+  color: rgba(0, 0, 0, 0.75);
+}
+.PlayPage__Button.--subtle i {
+  color: rgba(0, 0, 0, 0.3);
+}
+.PlayPage__Button.--subtle:hover {
+  background-color: #fafafa;
+}
+.PlayPage__Button.--incorrect {
+  position: relative;
+  box-shadow: inset 3px 0 0 0 red, inset -3px 0 0 0 red, inset 0 -3px 0 0 red;
+}
+.PlayPage__Button.--incorrect::after {
+  content: "INCORRECT";
+  position: absolute;
+  top: -1.25rem;
+  height: 1.25rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  background-color: red;
+  color: white;
+  text-shadow: 0 1px 0 black;
+  border-radius: 4px 4px 0 0;
+}
+.PlayPage__Button.--correct {
+  position: relative;
+  box-shadow: inset 3px 0 0 0 green, inset -3px 0 0 0 green, inset 0 -3px 0 0 green;
+}
+.PlayPage__Button.--correct::after {
+  content: "CORRECT";
+  position: absolute;
+  top: -1.25rem;
+  height: 1.25rem;
+  width: 100%;
+  text-align: center;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+  background-color: green;
+  color: white;
+  text-shadow: 0 1px 0 black;
+  border-radius: 4px 4px 0 0;
+}
+
+@media (max-width: 400px) {
+  .PlayPage__Button span {
+    font-size: 0.75rem;
+  }
+  .PlayPage__Button i {
+    font-size: 1.25rem;
+  }
+}
+.App__Header {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  flex-basis: 3.5rem;
+  color: #ffffff;
+  background-color: #333333;
+}
+.App__Header > h1 {
+  margin-left: 1rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.App__Main {
+  flex-basis: 100%;
+}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*
+    Modified to add Box Sizing Fix.
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+*:before, *:after {
+    box-sizing: inherit;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+html {
+    box-sizing: border-box;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+/* PrismJS 1.21.0
+https://prismjs.com/download.html#themes=prism&languages=clike+javascript */
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1em;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.token.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #9a6e3a;
+	/* This background color was intended by the author of this theme. */
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function,
+.token.class-name {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.4;
+  color: black;
+  background-color: white;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  height: 1px;
+  /* ugly fix for min-height and children that uses height % */
+  min-height: 100vh;
+}
+
+/*# sourceMappingURL=/src.f69400ca.css.map */
